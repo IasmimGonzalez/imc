@@ -1,24 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 
-    int main(){
-            char nome[80], adulto, idoso;
+int main(){
+
+        setlocale(LC_ALL,"Portuguese");
+            char nome[80], op;
             float peso, altura, imc;
             int idade;
+        
+        do{
 
                 printf("Qual o seu nome?\n");
                 fgets(nome, 80, stdin);
 
                 printf("Qual  sua idade?\n");
                 scanf("%d", &idade);
+                fflush(stdin);
             
                 printf("Ensira o peso(kg): (ex: 60)\n");
                 scanf("%f", &peso);
+                fflush(stdin);
 
                 printf("Ensira a altura(m):  (ex: 1.60)\n");
                 scanf("%f", &altura);
+                fflush(stdin);
 
 
                 
@@ -84,7 +92,13 @@
                 } 
             printf("\nO calculo foi realizado com base na tabela de\nclassificação de peso pelo IMC para Idosos!\n");   
             }
-       printf("\nReferência: WORLD HEALTH ORGANIZATIONRS.\nLIPSCHITZ, D.A. Screening for Nutritional Status in the Elderly..1994.\n");
-    }   
+        printf("\nReferência: WORLD HEALTH ORGANIZATIONRS.\nLIPSCHITZ, D.A. Screening for Nutritional Status in the Elderly..1994.\n");
+        printf("\nDeseja executar novamente? (s/n)\n");
+        scanf("%c", &op);
+        fflush(stdin);
+        system("cls");
+        } while(op == 'y' || op == 'Y');   
+
+}
     /* Este programa calcula o IMC e possui diferenciação de acordo com a idade: Adulto ou idoso.
 Foi utilizado como base para construção desse programa a tabela a seguir: https://dms.ufpel.edu.br/static/bib/apoio/imc.pdf*/
