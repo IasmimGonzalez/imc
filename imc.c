@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 
     int main(){
+        setlocale(LC_ALL,"Portuguese");
             char nome[80], adulto, idoso;
             float peso, altura, imc;
             int idade;
